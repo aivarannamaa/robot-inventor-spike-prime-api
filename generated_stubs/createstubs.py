@@ -109,6 +109,8 @@ class Stubber:
                     os.rename(file_path, pack_path + "/__init__.pyi")
                 except Exception:
                     os.rename(file_path, file_path.replace(".py", ".pyi"))
+            elif "." not in name: # dir
+                self.rename_package_modules(path + "/" + name)
                 
 
     def create_all_stubs(self):
@@ -213,8 +215,8 @@ class Stubber:
             # TODO: Motor
             # TODO: MotorPair
             hub.port.A.mode(hub.port.MODE_GPIO) # for getting more atts
-            #import time
-            #time.sleep(0.5)
+            import time
+            time.sleep(0.5)
             items.append(("_Pin", "", "<class 'type'>", hub.port.A.p5))
             items.append(("_Port", "", "<class 'type'>", hub.port.A))
             
