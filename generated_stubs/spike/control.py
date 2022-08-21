@@ -10,11 +10,14 @@ class Timer():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
+    def now(self, *args, **kwargs) -> Any:
+        """"""
+
     def reset(self, *args, **kwargs) -> Any:
         """"""
 
-    def now(self, *args, **kwargs) -> Any:
-        """"""
+def equal_to(*args, **kwargs) -> Any:
+    """"""
 
 def sleep(*args, **kwargs) -> Any:
     """"""
@@ -23,9 +26,6 @@ def ticks_diff(*args, **kwargs) -> Any:
     """"""
 
 def ticks_ms(*args, **kwargs) -> Any:
-    """"""
-
-def equal_to(*args, **kwargs) -> Any:
     """"""
 
 def wait_for_seconds(*args, **kwargs) -> Any:

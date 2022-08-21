@@ -5,12 +5,15 @@ Module: '_api.forcesensor' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-def sleep_ms(*args, **kwargs) -> Any:
-    """"""
-
 
 class ForceSensor():
     def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    def get_force_newton(self, *args, **kwargs) -> Any:
+        """"""
+
+    def get_force_percentage(self, *args, **kwargs) -> Any:
         """"""
 
     def is_pressed(self, *args, **kwargs) -> Any:
@@ -22,17 +25,14 @@ class ForceSensor():
     def wait_until_released(self, *args, **kwargs) -> Any:
         """"""
 
-    def get_force_newton(self, *args, **kwargs) -> Any:
-        """"""
-
-    def get_force_percentage(self, *args, **kwargs) -> Any:
-        """"""
-
-PORTS = {} # type: dict
 LPF2_FLIPPER_FORCE = 63 # type: int
+PORTS = {} # type: dict
 def is_type(*args, **kwargs) -> Any:
     """"""
 
 def newSensorDisconnectedError(*args, **kwargs) -> Any:
+    """"""
+
+def sleep_ms(*args, **kwargs) -> Any:
     """"""
 

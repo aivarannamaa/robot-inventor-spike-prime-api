@@ -13,9 +13,6 @@ class Button():
     def is_pressed(self, *args, **kwargs) -> Any:
         """"""
 
-    def was_pressed(self, *args, **kwargs) -> Any:
-        """"""
-
     def is_released(self, *args, **kwargs) -> Any:
         """"""
 
@@ -25,15 +22,44 @@ class Button():
     def wait_until_released(self, *args, **kwargs) -> Any:
         """"""
 
+    def was_pressed(self, *args, **kwargs) -> Any:
+        """"""
+
+
+class LargeTechnicHub():
+    def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    PORT_A = 'A' # type: str
+    PORT_B = 'B' # type: str
+    PORT_C = 'C' # type: str
+    PORT_D = 'D' # type: str
+    PORT_E = 'E' # type: str
+    PORT_F = 'F' # type: str
+    left_button : Any ## <class 'property'> = <property>
+    light_matrix : Any ## <class 'property'> = <property>
+    motion_sensor : Any ## <class 'property'> = <property>
+    right_button : Any ## <class 'property'> = <property>
+    speaker : Any ## <class 'property'> = <property>
+    status_light : Any ## <class 'property'> = <property>
 
 class LightMatrix():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def write(self, *args, **kwargs) -> Any:
+    def get_orientation(self, *args, **kwargs) -> Any:
         """"""
 
     def off(self, *args, **kwargs) -> Any:
+        """"""
+
+    def play_animation(self, *args, **kwargs) -> Any:
+        """"""
+
+    def rotate(self, *args, **kwargs) -> Any:
+        """"""
+
+    def set_orientation(self, *args, **kwargs) -> Any:
         """"""
 
     def set_pixel(self, *args, **kwargs) -> Any:
@@ -45,30 +71,10 @@ class LightMatrix():
     def show_image(self, *args, **kwargs) -> Any:
         """"""
 
-    def play_animation(self, *args, **kwargs) -> Any:
-        """"""
-
     def start_animation(self, *args, **kwargs) -> Any:
         """"""
 
-    def get_orientation(self, *args, **kwargs) -> Any:
-        """"""
-
-    def set_orientation(self, *args, **kwargs) -> Any:
-        """"""
-
-    def rotate(self, *args, **kwargs) -> Any:
-        """"""
-
-
-class StatusLight():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
-    def off(self, *args, **kwargs) -> Any:
-        """"""
-
-    def on(self, *args, **kwargs) -> Any:
+    def write(self, *args, **kwargs) -> Any:
         """"""
 
 
@@ -77,12 +83,19 @@ class MotionSensor():
         """"""
 
     BACK = 'back' # type: str
+    DOUBLE_TAPPED = 'doubletapped' # type: str
     DOWN = 'down' # type: str
     FALLING = 'falling' # type: str
     FRONT = 'front' # type: str
+    LEFT_SIDE = 'leftside' # type: str
+    RIGHT_SIDE = 'rightside' # type: str
+    SHAKEN = 'shaken' # type: str
     TAPPED = 'tapped' # type: str
     UP = 'up' # type: str
     def align_to_model(self, *args, **kwargs) -> Any:
+        """"""
+
+    def get_gesture(self, *args, **kwargs) -> Any:
         """"""
 
     def get_orientation(self, *args, **kwargs) -> Any:
@@ -100,28 +113,18 @@ class MotionSensor():
     def reset_yaw_angle(self, *args, **kwargs) -> Any:
         """"""
 
-    LEFT_SIDE = 'leftside' # type: str
-    RIGHT_SIDE = 'rightside' # type: str
-    def wait_for_new_orientation(self, *args, **kwargs) -> Any:
+    def wait_for_new_gesture(self, *args, **kwargs) -> Any:
         """"""
 
-    SHAKEN = 'shaken' # type: str
-    DOUBLE_TAPPED = 'doubletapped' # type: str
-    def get_gesture(self, *args, **kwargs) -> Any:
+    def wait_for_new_orientation(self, *args, **kwargs) -> Any:
         """"""
 
     def was_gesture(self, *args, **kwargs) -> Any:
         """"""
 
-    def wait_for_new_gesture(self, *args, **kwargs) -> Any:
-        """"""
-
 
 class Speaker():
     def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
-    def stop(self, *args, **kwargs) -> Any:
         """"""
 
     def beep(self, *args, **kwargs) -> Any:
@@ -130,32 +133,29 @@ class Speaker():
     def get_volume(self, *args, **kwargs) -> Any:
         """"""
 
+    def play_sound(self, *args, **kwargs) -> Any:
+        """"""
+
     def set_volume(self, *args, **kwargs) -> Any:
         """"""
 
     def start_beep(self, *args, **kwargs) -> Any:
         """"""
 
-    def play_sound(self, *args, **kwargs) -> Any:
-        """"""
-
     def start_sound(self, *args, **kwargs) -> Any:
         """"""
 
+    def stop(self, *args, **kwargs) -> Any:
+        """"""
 
-class LargeTechnicHub():
+
+class StatusLight():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    speaker : Any ## <class 'property'> = <property>
-    light_matrix : Any ## <class 'property'> = <property>
-    status_light : Any ## <class 'property'> = <property>
-    left_button : Any ## <class 'property'> = <property>
-    right_button : Any ## <class 'property'> = <property>
-    motion_sensor : Any ## <class 'property'> = <property>
-    PORT_A = 'A' # type: str
-    PORT_B = 'B' # type: str
-    PORT_C = 'C' # type: str
-    PORT_D = 'D' # type: str
-    PORT_E = 'E' # type: str
-    PORT_F = 'F' # type: str
+    def off(self, *args, **kwargs) -> Any:
+        """"""
+
+    def on(self, *args, **kwargs) -> Any:
+        """"""
+

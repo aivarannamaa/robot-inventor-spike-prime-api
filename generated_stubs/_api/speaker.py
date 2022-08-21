@@ -10,13 +10,13 @@ class Speaker():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def stop(self, *args, **kwargs) -> Any:
-        """"""
-
     def beep(self, *args, **kwargs) -> Any:
         """"""
 
     def get_volume(self, *args, **kwargs) -> Any:
+        """"""
+
+    def play_sound(self, *args, **kwargs) -> Any:
         """"""
 
     def set_volume(self, *args, **kwargs) -> Any:
@@ -25,15 +25,11 @@ class Speaker():
     def start_beep(self, *args, **kwargs) -> Any:
         """"""
 
-    def play_sound(self, *args, **kwargs) -> Any:
-        """"""
-
     def start_sound(self, *args, **kwargs) -> Any:
         """"""
 
-system : Any ## <class 'System'> = <System object at 20028790>
-def wait_for_async(*args, **kwargs) -> Any:
-    """"""
+    def stop(self, *args, **kwargs) -> Any:
+        """"""
 
 
 class SpeakerSoundProvider():
@@ -45,4 +41,8 @@ class SpeakerSoundProvider():
 
     def get_sound_files(self, *args, **kwargs) -> Any:
         """"""
+
+system : Any ## <class 'System'> = <System object at 20028920>
+def wait_for_async(*args, **kwargs) -> Any:
+    """"""
 

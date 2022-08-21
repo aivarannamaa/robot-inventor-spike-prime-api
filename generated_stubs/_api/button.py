@@ -13,9 +13,6 @@ class Button():
     def is_pressed(self, *args, **kwargs) -> Any:
         """"""
 
-    def was_pressed(self, *args, **kwargs) -> Any:
-        """"""
-
     def is_released(self, *args, **kwargs) -> Any:
         """"""
 
@@ -23,5 +20,8 @@ class Button():
         """"""
 
     def wait_until_released(self, *args, **kwargs) -> Any:
+        """"""
+
+    def was_pressed(self, *args, **kwargs) -> Any:
         """"""
 

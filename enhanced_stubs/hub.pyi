@@ -3,11 +3,13 @@ Module: 'hub' on micropython-v1.14-893-lego learning system hub
 """
 # MCU: {'machine': 'LEGO Technic Large Hub with STM32F413xx', 'sysname': 'LEGO Technic Large Hub', 'platform': 'LEGO Learning System Hub', 'nodename': 'LEGO Learning System Hub', 'ver': 'v1.14-893', 'release': '1.14.0', 'name': 'micropython', 'family': 'micropython', 'port': 'LEGO Learning System Hub', 'version': '1.14.0', 'mpy': 517, 'build': '893'}
 # Stubber: 1.7.2
-from typing import Any, Dict, overload, Tuple, Optional
+from typing import Any, Dict, overload, Tuple, Optional, Protocol
 
 __version__: str
+
 config:Dict[str, Any] = {}
 
+# Orientation constants
 TOP:int = 0
 FRONT:int = 1
 RIGHT:int = 2
@@ -15,12 +17,63 @@ BOTTOM: int = 3
 BACK: int = 4
 LEFT = 5
 
-
-
-class _Battery():
-    def __init__(self, *argv, **kwargs) -> None:
+class _Button(Protocol):
+    def callback(self, *args, **kwargs) -> Any:
         """"""
 
+    def is_pressed(self, *args, **kwargs) -> Any:
+        """"""
+
+    def on_change(self, *args, **kwargs) -> Any:
+        """"""
+
+    def presses(self, *args, **kwargs) -> Any:
+        """"""
+
+    def was_pressed(self, *args, **kwargs) -> Any:
+        """"""
+
+class _Device(Protocol):
+    """
+    TODO:
+    """
+
+class _Motor(Protocol):
+    """
+    TODO:
+    """
+
+class _MotorPair(Protocol):
+    """
+    TODO:
+    """
+
+class _Pin(Protocol):
+    """
+    TODO:
+    """
+
+class _Port(Protocol):
+    def callback(self, *args, **kwargs) -> Any:
+        """"""
+
+    device : Optional[_Device]
+    def info(self, *args, **kwargs) -> Any:
+        """"""
+
+    def mode(self, *args, **kwargs) -> Any:
+        """"""
+
+    motor : Optional[_Motor]
+    def pwm(self, *args, **kwargs) -> Any:
+        """"""
+
+
+
+class _battery(Protocol):
+    """
+    Battery-related constants and functions.
+    """
     BATTERY_BAD_BATTERY = -4 # type: int
     BATTERY_HUB_TEMPERATURE_CRITICAL_OUT_OF_RANGE = -2 # type: int
     BATTERY_MISSING = -6 # type: int
@@ -54,30 +107,8 @@ class _Battery():
     def voltage(self, *args, **kwargs) -> Any:
         """"""
 
-class _Button():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
 
-    def callback(self, *args, **kwargs) -> Any:
-        """"""
-
-    def is_pressed(self, *args, **kwargs) -> Any:
-        """"""
-
-    def on_change(self, *args, **kwargs) -> Any:
-        """"""
-
-    def presses(self, *args, **kwargs) -> Any:
-        """"""
-
-    def was_pressed(self, *args, **kwargs) -> Any:
-        """"""
-
-
-class _Bluetooth():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
+class _bluetooth(Protocol):
     def discoverable(self, *args, **kwargs) -> Any:
         """"""
 
@@ -101,12 +132,17 @@ class _Bluetooth():
 
     def rfcomm_disconnect(self, *args, **kwargs) -> Any:
         """"""
+class _button(Protocol):
+    """
+    Button instances.
+    """
+    center : _Button
+    connect : _Button
+    left : _Button
+    right : _Button
 
 
-class _Display():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
+class _display(Protocol):
     def clear(self, *args, **kwargs) -> Any:
         """"""
 
@@ -129,10 +165,7 @@ class _Display():
         """"""
 
 
-class _Motion():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
+class _motion(Protocol):
     DOUBLETAPPED = 1 # type: int
     FREEFALL = 3 # type: int
     SHAKE = 2 # type: int
@@ -155,34 +188,28 @@ class _Motion():
     def yaw_pitch_roll(self, *args, **kwargs) -> Any:
         """"""
 
-class _Port():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
 
-    def callback(self, *args, **kwargs) -> Any:
-        """"""
-
-    device : Any ## <class 'NoneType'> = None
-    def info(self, *args, **kwargs) -> Any:
-        """"""
-
-    def mode(self, *args, **kwargs) -> Any:
-        """"""
-
-    motor : Any ## <class 'NoneType'> = None
-    def pwm(self, *args, **kwargs) -> Any:
-        """"""
+class _port(Protocol):
+    A : _Port
+    ATTACHED:int = 1
+    B : _Port
+    C : _Port
+    D : _Port
+    DETACHED:int = 0
+    E : _Port
+    F : _Port
+    MODE_DEFAULT:int = 0
+    MODE_FULL_DUPLEX:int = 1
+    MODE_GPIO:int = 3
+    MODE_HALF_DUPLEX:int = 2
 
 
 
-class _Sound():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
-    SOUND_SAWTOOTH = 3 # type: int
-    SOUND_SIN = 0 # type: int
-    SOUND_SQUARE = 1 # type: int
-    SOUND_TRIANGLE = 2 # type: int
+class _sound(Protocol):
+    SOUND_SIN:int = 0
+    SOUND_SQUARE:int = 1
+    SOUND_TRIANGLE :int= 2
+    SOUND_SAWTOOTH:int = 3
     def beep(self, *args, **kwargs) -> Any:
         """"""
 
@@ -196,86 +223,12 @@ class _Sound():
         """"""
 
 
-class _Supervision():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
+class _supervision(Protocol):
     def callback(self, *args, **kwargs) -> Any:
         """"""
 
     def info(self, *args, **kwargs) -> Any:
         """"""
-
-battery : Any ## <class 'Battery'> = Battery class
-bluetooth : Any ## <class 'bluetooth'> = <bluetooth>
-display : Any ## <class 'Display'> = <Display>
-motion : Any ## <class 'Motion'> = Motion()
-
-
-def info() -> Dict[str, Any]:
-    """Returns information about the hub"""
-
-def status() -> Dict[str, Any]:
-    """Returns status of the components."""
-
-@overload
-def power_off(fast:bool=True, restart:bool=False) -> None:
-    """
-    Turns the hub off.
-
-    Use fast=True for fast shut down, without the usual light animation and sound.
-    Use restart=True to reboot after shutting down.
-    """
-
-@overload
-def power_off(timeout:int=0) -> None:
-    """Sets the inactivity timeout before the hub shuts down automatically."""
-
-def repl_restart(restart: bool = True) -> None:
-    """
-    Resets the REPL and clears all variables if restart=True.
-
-    Does nothing if restart=False.
-    """
-
-def temperature() -> float:
-    """Returns hub's temperature in Celsius degrees."""
-
-
-@overload
-def led(color: int, /) -> None:
-    """Sets the color of the LED in the center button of the hub.
-
-    0 = off
-    1 = pink
-    2 = violet
-    3 = blue
-    4 = turquoise
-    5 = light green
-    6 = green
-    7 = yellow
-    8 = orange
-    9 = red
-    10 = white
-    """
-
-@overload
-def led(red: int, green: int, blue: int, /) -> None:
-    """Sets the color of the LED in the center button of the hub as RGB components (0-255)."""
-
-@overload
-def led(color:Tuple[int, int, int], /) -> None:
-    """Sets the color of the LED in the center button of the hub as tuple of RGB components (0-255)."""
-
-
-def file_transfer(filename: str, filesize: int, packetsize:int=1000, timeout:int=2000, mode:Optional[str]=None) -> None:
-    """Prepares a file transfer to the hub."""
-
-def reset() -> None:
-    """Resets the hub."""
-
-
-
 
 class Image():
     def __init__(self, *argv, **kwargs) -> None:
@@ -375,37 +328,6 @@ class Image():
     def width(self, *args, **kwargs) -> Any:
         """"""
 
-class button():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
-    center : Any ## <class ''> = center
-    connect : Any ## <class ''> = connect
-    left : Any ## <class ''> = left
-    right : Any ## <class ''> = right
-
-
-class port():
-    def __init__(self, *argv, **kwargs) -> None:
-        """"""
-
-    A : Any ## <class 'Port'> = Port(A)
-    ATTACHED = 1 # type: int
-    B : Any ## <class 'Port'> = Port(B)
-    C : Any ## <class 'Port'> = Port(C)
-    D : Any ## <class 'Port'> = Port(D)
-    DETACHED = 0 # type: int
-    E : Any ## <class 'Port'> = Port(E)
-    F : Any ## <class 'Port'> = Port(F)
-    MODE_DEFAULT = 0 # type: int
-    MODE_FULL_DUPLEX = 1 # type: int
-    MODE_GPIO = 3 # type: int
-    MODE_HALF_DUPLEX = 2 # type: int
-
-sound : Any ## <class 'Sound'> = Sound()
-
-supervision : Any ## <class 'supervision'> = <supervision>
-
 
 class BT_VCP():
     def __init__(self, *argv, **kwargs) -> None:
@@ -446,6 +368,8 @@ class BT_VCP():
 
     def setinterrupt(self, *args, **kwargs) -> Any:
         """"""
+
+
 
 class USB_VCP():
     def __init__(self, *argv, **kwargs) -> None:
@@ -491,4 +415,89 @@ class USB_VCP():
 
     def setinterrupt(self, *args, **kwargs) -> Any:
         """"""
+
+
+battery : _battery
+
+bluetooth : _bluetooth
+
+button : _button
+
+display : _display
+
+motion : _motion
+
+port : _port
+
+sound : _sound
+
+supervision : _supervision
+
+
+
+
+def info() -> Dict[str, Any]:
+    """Returns information about the hub"""
+
+def status() -> Dict[str, Any]:
+    """Returns status of the components."""
+
+@overload
+def power_off(fast:bool=True, restart:bool=False) -> None:
+    """
+    Turns the hub off.
+
+    Use fast=True for fast shut down, without the usual light animation and sound.
+    Use restart=True to reboot after shutting down.
+    """
+
+@overload
+def power_off(timeout:int=0) -> None:
+    """Sets the inactivity timeout before the hub shuts down automatically."""
+
+def repl_restart(restart: bool = True) -> None:
+    """
+    Resets the REPL and clears all variables if restart=True.
+
+    Does nothing if restart=False.
+    """
+
+def temperature() -> float:
+    """Returns hub's temperature in Celsius degrees."""
+
+
+@overload
+def led(color: int, /) -> None:
+    """Sets the color of the LED in the center button of the hub.
+
+    0 = off
+    1 = pink
+    2 = violet
+    3 = blue
+    4 = turquoise
+    5 = light green
+    6 = green
+    7 = yellow
+    8 = orange
+    9 = red
+    10 = white
+    """
+
+@overload
+def led(red: int, green: int, blue: int, /) -> None:
+    """Sets the color of the LED in the center button of the hub as RGB components (0-255)."""
+
+@overload
+def led(color:Tuple[int, int, int], /) -> None:
+    """Sets the color of the LED in the center button of the hub as tuple of RGB components (0-255)."""
+
+
+def file_transfer(filename: str, filesize: int, packetsize:int=1000, timeout:int=2000, mode:Optional[str]=None) -> None:
+    """Prepares a file transfer to the hub."""
+
+def reset() -> None:
+    """Resets the hub."""
+
+
+
 

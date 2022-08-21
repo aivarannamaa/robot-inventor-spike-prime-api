@@ -10,42 +10,36 @@ class MotorPair():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def start(self, *args, **kwargs) -> Any:
-        """"""
-
-    def stop(self, *args, **kwargs) -> Any:
-        """"""
-
+    BRAKE = 'brake' # type: str
+    CM = 'cm' # type: str
+    COAST = 'coast' # type: str
+    DEGREES = 'degrees' # type: str
+    HOLD = 'hold' # type: str
     IN = 'in' # type: str
+    ROTATIONS = 'rotations' # type: str
+    SECONDS = 'seconds' # type: str
+    def get_default_speed(self, *args, **kwargs) -> Any:
+        """"""
+
     def move(self, *args, **kwargs) -> Any:
         """"""
 
-    BRAKE = 'brake' # type: str
-    HOLD = 'hold' # type: str
-    CM = 'cm' # type: str
-    def get_default_speed(self, *args, **kwargs) -> Any:
+    def move_tank(self, *args, **kwargs) -> Any:
         """"""
 
     def set_default_speed(self, *args, **kwargs) -> Any:
         """"""
 
-    COAST = 'coast' # type: str
-    def set_stop_action(self, *args, **kwargs) -> Any:
-        """"""
-
-    def start_at_power(self, *args, **kwargs) -> Any:
-        """"""
-
-    def was_interrupted(self, *args, **kwargs) -> Any:
-        """"""
-
-    ROTATIONS = 'rotations' # type: str
-    DEGREES = 'degrees' # type: str
-    SECONDS = 'seconds' # type: str
     def set_motor_rotation(self, *args, **kwargs) -> Any:
         """"""
 
-    def move_tank(self, *args, **kwargs) -> Any:
+    def set_stop_action(self, *args, **kwargs) -> Any:
+        """"""
+
+    def start(self, *args, **kwargs) -> Any:
+        """"""
+
+    def start_at_power(self, *args, **kwargs) -> Any:
         """"""
 
     def start_tank(self, *args, **kwargs) -> Any:
@@ -54,20 +48,26 @@ class MotorPair():
     def start_tank_at_power(self, *args, **kwargs) -> Any:
         """"""
 
-system : Any ## <class 'System'> = <System object at 20028790>
+    def stop(self, *args, **kwargs) -> Any:
+        """"""
+
+    def was_interrupted(self, *args, **kwargs) -> Any:
+        """"""
+
 PORTS = {} # type: dict
-def wait_for_async(*args, **kwargs) -> Any:
+def clamp_power(*args, **kwargs) -> Any:
     """"""
 
 def clamp_speed(*args, **kwargs) -> Any:
     """"""
 
-def clamp_power(*args, **kwargs) -> Any:
+def clamp_steering(*args, **kwargs) -> Any:
     """"""
 
 def from_steering(*args, **kwargs) -> Any:
     """"""
 
-def clamp_steering(*args, **kwargs) -> Any:
+system : Any ## <class 'System'> = <System object at 20028920>
+def wait_for_async(*args, **kwargs) -> Any:
     """"""
 

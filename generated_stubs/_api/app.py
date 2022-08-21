@@ -5,14 +5,6 @@ Module: '_api.app' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-BT_VCP : Any ## <class 'BT_VCP'> = BT_VCP(0)
-USB_VCP : Any ## <class 'USB_VCP'> = USB_VCP(0)
-def ticks_diff(*args, **kwargs) -> Any:
-    """"""
-
-def ticks_ms(*args, **kwargs) -> Any:
-    """"""
-
 
 class App():
     def __init__(self, *argv, **kwargs) -> None:
@@ -27,4 +19,12 @@ class App():
     def stop_sound(self, *args, **kwargs) -> Any:
         """"""
 
-json_rpc : Any ## <class 'JSONRPC'> = <JSONRPC object at 2001cff0>
+BT_VCP : Any ## <class 'BT_VCP'> = BT_VCP(0)
+USB_VCP : Any ## <class 'USB_VCP'> = USB_VCP(0)
+json_rpc : Any ## <class 'JSONRPC'> = <JSONRPC object at 2001d180>
+def ticks_diff(*args, **kwargs) -> Any:
+    """"""
+
+def ticks_ms(*args, **kwargs) -> Any:
+    """"""
+

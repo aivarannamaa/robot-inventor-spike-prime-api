@@ -15,7 +15,13 @@ class BT_VCP():
     def any(self, *args, **kwargs) -> Any:
         """"""
 
+    def callback(self, *args, **kwargs) -> Any:
+        """"""
+
     def close(self, *args, **kwargs) -> Any:
+        """"""
+
+    def isconnected(self, *args, **kwargs) -> Any:
         """"""
 
     def read(self, *args, **kwargs) -> Any:
@@ -27,25 +33,19 @@ class BT_VCP():
     def readline(self, *args, **kwargs) -> Any:
         """"""
 
-    def send(self, *args, **kwargs) -> Any:
-        """"""
-
-    def write(self, *args, **kwargs) -> Any:
-        """"""
-
-    def callback(self, *args, **kwargs) -> Any:
-        """"""
-
-    def isconnected(self, *args, **kwargs) -> Any:
-        """"""
-
     def readlines(self, *args, **kwargs) -> Any:
         """"""
 
     def recv(self, *args, **kwargs) -> Any:
         """"""
 
+    def send(self, *args, **kwargs) -> Any:
+        """"""
+
     def setinterrupt(self, *args, **kwargs) -> Any:
+        """"""
+
+    def write(self, *args, **kwargs) -> Any:
         """"""
 
 FRONT = 1 # type: int
@@ -155,10 +155,21 @@ class USB_VCP():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
+    CTS = 2 # type: int
+    RTS = 1 # type: int
     def any(self, *args, **kwargs) -> Any:
         """"""
 
+    def callback(self, *args, **kwargs) -> Any:
+        """"""
+
     def close(self, *args, **kwargs) -> Any:
+        """"""
+
+    def init(self, *args, **kwargs) -> Any:
+        """"""
+
+    def isconnected(self, *args, **kwargs) -> Any:
         """"""
 
     def read(self, *args, **kwargs) -> Any:
@@ -170,30 +181,19 @@ class USB_VCP():
     def readline(self, *args, **kwargs) -> Any:
         """"""
 
-    def send(self, *args, **kwargs) -> Any:
-        """"""
-
-    def write(self, *args, **kwargs) -> Any:
-        """"""
-
-    CTS = 2 # type: int
-    RTS = 1 # type: int
-    def callback(self, *args, **kwargs) -> Any:
-        """"""
-
-    def init(self, *args, **kwargs) -> Any:
-        """"""
-
-    def isconnected(self, *args, **kwargs) -> Any:
-        """"""
-
     def readlines(self, *args, **kwargs) -> Any:
         """"""
 
     def recv(self, *args, **kwargs) -> Any:
         """"""
 
+    def send(self, *args, **kwargs) -> Any:
+        """"""
+
     def setinterrupt(self, *args, **kwargs) -> Any:
+        """"""
+
+    def write(self, *args, **kwargs) -> Any:
         """"""
 
 battery : Any ## <class 'Battery'> = Battery class
@@ -258,19 +258,24 @@ class _Button():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def callback(self, *args, **kwargs) -> Any:
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
         """"""
 
-    def is_pressed(self, *args, **kwargs) -> Any:
+    @classmethod
+    def is_pressed(cls, *args, **kwargs) -> Any:
         """"""
 
-    def on_change(self, *args, **kwargs) -> Any:
+    @classmethod
+    def on_change(cls, *args, **kwargs) -> Any:
         """"""
 
-    def presses(self, *args, **kwargs) -> Any:
+    @classmethod
+    def presses(cls, *args, **kwargs) -> Any:
         """"""
 
-    def was_pressed(self, *args, **kwargs) -> Any:
+    @classmethod
+    def was_pressed(cls, *args, **kwargs) -> Any:
         """"""
 
 
@@ -278,22 +283,26 @@ class _Port():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def callback(self, *args, **kwargs) -> Any:
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
         """"""
 
     device : Any ## <class 'NoneType'> = None
-    def info(self, *args, **kwargs) -> Any:
+    @classmethod
+    def info(cls, *args, **kwargs) -> Any:
         """"""
 
-    def mode(self, *args, **kwargs) -> Any:
+    @classmethod
+    def mode(cls, *args, **kwargs) -> Any:
         """"""
 
     motor : Any ## <class 'NoneType'> = None
-    def pwm(self, *args, **kwargs) -> Any:
+    @classmethod
+    def pwm(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Battery():
+class _battery():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
@@ -312,81 +321,111 @@ class _Battery():
     USB_CH_PORT_DCP = 3 # type: int
     USB_CH_PORT_NONE = 0 # type: int
     USB_CH_PORT_SDP = 1 # type: int
-    def capacity_left(self, *args, **kwargs) -> Any:
+    @classmethod
+    def capacity_left(cls, *args, **kwargs) -> Any:
         """"""
 
-    def charger_detect(self, *args, **kwargs) -> Any:
+    @classmethod
+    def charger_detect(cls, *args, **kwargs) -> Any:
         """"""
 
-    def current(self, *args, **kwargs) -> Any:
+    @classmethod
+    def current(cls, *args, **kwargs) -> Any:
         """"""
 
-    def info(self, *args, **kwargs) -> Any:
+    @classmethod
+    def info(cls, *args, **kwargs) -> Any:
         """"""
 
-    def temperature(self, *args, **kwargs) -> Any:
+    @classmethod
+    def temperature(cls, *args, **kwargs) -> Any:
         """"""
 
-    def voltage(self, *args, **kwargs) -> Any:
+    @classmethod
+    def voltage(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Bluetooth():
+class _bluetooth():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def discoverable(self, *args, **kwargs) -> Any:
+    @classmethod
+    def discoverable(cls, *args, **kwargs) -> Any:
         """"""
 
-    def forget(self, *args, **kwargs) -> Any:
+    @classmethod
+    def forget(cls, *args, **kwargs) -> Any:
         """"""
 
-    def info(self, *args, **kwargs) -> Any:
+    @classmethod
+    def info(cls, *args, **kwargs) -> Any:
         """"""
 
-    def lwp_advertise(self, *args, **kwargs) -> Any:
+    @classmethod
+    def lwp_advertise(cls, *args, **kwargs) -> Any:
         """"""
 
-    def lwp_bypass(self, *args, **kwargs) -> Any:
+    @classmethod
+    def lwp_bypass(cls, *args, **kwargs) -> Any:
         """"""
 
-    def lwp_monitor(self, *args, **kwargs) -> Any:
+    @classmethod
+    def lwp_monitor(cls, *args, **kwargs) -> Any:
         """"""
 
-    def rfcomm_connect(self, *args, **kwargs) -> Any:
+    @classmethod
+    def rfcomm_connect(cls, *args, **kwargs) -> Any:
         """"""
 
-    def rfcomm_disconnect(self, *args, **kwargs) -> Any:
+    @classmethod
+    def rfcomm_disconnect(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Display():
+class _button():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def clear(self, *args, **kwargs) -> Any:
+    center : Any ## <class ''> = center
+    connect : Any ## <class ''> = connect
+    left : Any ## <class ''> = left
+    right : Any ## <class ''> = right
+
+class _display():
+    def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def align(self, *args, **kwargs) -> Any:
+    @classmethod
+    def align(cls, *args, **kwargs) -> Any:
         """"""
 
-    def callback(self, *args, **kwargs) -> Any:
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
         """"""
 
-    def invert(self, *args, **kwargs) -> Any:
+    @classmethod
+    def clear(cls, *args, **kwargs) -> Any:
         """"""
 
-    def pixel(self, *args, **kwargs) -> Any:
+    @classmethod
+    def invert(cls, *args, **kwargs) -> Any:
         """"""
 
-    def rotation(self, *args, **kwargs) -> Any:
+    @classmethod
+    def pixel(cls, *args, **kwargs) -> Any:
         """"""
 
-    def show(self, *args, **kwargs) -> Any:
+    @classmethod
+    def rotation(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def show(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Motion():
+class _motion():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
@@ -394,26 +433,49 @@ class _Motion():
     FREEFALL = 3 # type: int
     SHAKE = 2 # type: int
     TAPPED = 0 # type: int
-    def accelerometer(self, *args, **kwargs) -> Any:
+    @classmethod
+    def accelerometer(cls, *args, **kwargs) -> Any:
         """"""
 
-    def align_to_model(self, *args, **kwargs) -> Any:
+    @classmethod
+    def align_to_model(cls, *args, **kwargs) -> Any:
         """"""
 
-    def gesture(self, *args, **kwargs) -> Any:
+    @classmethod
+    def gesture(cls, *args, **kwargs) -> Any:
         """"""
 
-    def gyroscope(self, *args, **kwargs) -> Any:
+    @classmethod
+    def gyroscope(cls, *args, **kwargs) -> Any:
         """"""
 
-    def orientation(self, *args, **kwargs) -> Any:
+    @classmethod
+    def orientation(cls, *args, **kwargs) -> Any:
         """"""
 
-    def yaw_pitch_roll(self, *args, **kwargs) -> Any:
+    @classmethod
+    def yaw_pitch_roll(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Sound():
+class _port():
+    def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    A : Any ## <class 'Port'> = Port(A)
+    ATTACHED = 1 # type: int
+    B : Any ## <class 'Port'> = Port(B)
+    C : Any ## <class 'Port'> = Port(C)
+    D : Any ## <class 'Port'> = Port(D)
+    DETACHED = 0 # type: int
+    E : Any ## <class 'Port'> = Port(E)
+    F : Any ## <class 'Port'> = Port(F)
+    MODE_DEFAULT = 0 # type: int
+    MODE_FULL_DUPLEX = 1 # type: int
+    MODE_GPIO = 3 # type: int
+    MODE_HALF_DUPLEX = 2 # type: int
+
+class _sound():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
@@ -421,26 +483,32 @@ class _Sound():
     SOUND_SIN = 0 # type: int
     SOUND_SQUARE = 1 # type: int
     SOUND_TRIANGLE = 2 # type: int
-    def beep(self, *args, **kwargs) -> Any:
+    @classmethod
+    def beep(cls, *args, **kwargs) -> Any:
         """"""
 
-    def callback(self, *args, **kwargs) -> Any:
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
         """"""
 
-    def play(self, *args, **kwargs) -> Any:
+    @classmethod
+    def play(cls, *args, **kwargs) -> Any:
         """"""
 
-    def volume(self, *args, **kwargs) -> Any:
+    @classmethod
+    def volume(cls, *args, **kwargs) -> Any:
         """"""
 
 
-class _Supervision():
+class _supervision():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
 
-    def callback(self, *args, **kwargs) -> Any:
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
         """"""
 
-    def info(self, *args, **kwargs) -> Any:
+    @classmethod
+    def info(cls, *args, **kwargs) -> Any:
         """"""
 
