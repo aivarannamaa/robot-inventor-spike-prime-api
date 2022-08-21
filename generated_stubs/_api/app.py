@@ -21,7 +21,7 @@ class App():
 
 BT_VCP : Any ## <class 'BT_VCP'> = BT_VCP(0)
 USB_VCP : Any ## <class 'USB_VCP'> = USB_VCP(0)
-json_rpc : Any ## <class 'JSONRPC'> = <JSONRPC object at 2001d180>
+json_rpc : Any ## <class 'JSONRPC'> = <JSONRPC object at 2001cff0>
 def ticks_diff(*args, **kwargs) -> Any:
     """"""
 

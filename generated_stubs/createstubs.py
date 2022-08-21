@@ -212,6 +212,10 @@ class Stubber:
             # TODO: Device
             # TODO: Motor
             # TODO: MotorPair
+            hub.port.A.mode(hub.port.MODE_GPIO) # for getting more atts
+            #import time
+            #time.sleep(0.5)
+            items.append(("_Pin", "", "<class 'type'>", hub.port.A.p5))
             items.append(("_Port", "", "<class 'type'>", hub.port.A))
             
             items.append(("_battery", "", "<class 'type'>", hub.battery))

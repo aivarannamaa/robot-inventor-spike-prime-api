@@ -279,6 +279,19 @@ class _Button():
         """"""
 
 
+class _Pin():
+    def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    @classmethod
+    def direction(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def value(cls, *args, **kwargs) -> Any:
+        """"""
+
+
 class _Port():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
@@ -297,6 +310,8 @@ class _Port():
         """"""
 
     motor : Any ## <class 'NoneType'> = None
+    p5 : Any ## <class 'Port'> = Port(A)
+    p6 : Any ## <class 'Port'> = Port(A)
     @classmethod
     def pwm(cls, *args, **kwargs) -> Any:
         """"""
