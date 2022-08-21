@@ -1,8 +1,8 @@
 """
-Module: 'hub' on micropython-v1.14-893-lego learning system hub
+The lower-level hub API.
+
+Described at https://lego.github.io/MINDSTORMS-Robot-Inventor-hub-API/
 """
-# MCU: {'machine': 'LEGO Technic Large Hub with STM32F413xx', 'sysname': 'LEGO Technic Large Hub', 'platform': 'LEGO Learning System Hub', 'nodename': 'LEGO Learning System Hub', 'ver': 'v1.14-893', 'release': '1.14.0', 'name': 'micropython', 'family': 'micropython', 'port': 'LEGO Learning System Hub', 'version': '1.14.0', 'mpy': 517, 'build': '893'}
-# Stubber: 1.7.2
 from typing import (
     Any,
     Callable,
@@ -16,10 +16,6 @@ from typing import (
     Union,
     overload,
 )
-
-"""
-The entry point for using the hub API.
-"""
 
 __version__: str
 """
