@@ -5,23 +5,16 @@ Module: '_api.button' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class Button():
+class Button:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
     def is_pressed(self, *args, **kwargs) -> Any:
         """"""
-
     def is_released(self, *args, **kwargs) -> Any:
         """"""
-
     def wait_until_pressed(self, *args, **kwargs) -> Any:
         """"""
-
     def wait_until_released(self, *args, **kwargs) -> Any:
         """"""
-
     def was_pressed(self, *args, **kwargs) -> Any:
         """"""
-

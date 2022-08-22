@@ -5,4 +5,3 @@ Module: 'spike.util' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 
 from _api.util import newSensorDisconnectedError, wait_for_async
-

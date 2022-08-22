@@ -71,17 +71,233 @@ class _Device(Protocol):
     This class is the blueprint for the device attributes of the ports in the ``hub.port`` module, which in turn are instances of the Port class. You cannot import or instantiate this class manually.
     """
 
-    # TODO:
+    FORMAT_PCT: Final[int] = 1
+    FORMAT_RAW: Final[int] = 0
+    FORMAT_SI: Final[int] = 2
+
+    def get(self, format: Optional[int]) -> List[Any]:
+        """"""
+    @overload
+    def mode(self, mode: int) -> None:
+        """"""
+    @overload
+    def mode(self, mode: int, data: bytes) -> None:
+        """"""
+    @overload
+    def mode(self, mode: Iterable[Tuple[int, int]]) -> None:
+        """"""
+    @overload
+    def mode(self) -> Iterable[Tuple[int, int]]:
+        """"""
+    def pwm(self, value: int) -> None:
+        """"""
+    def write_direct(self, data: bytes) -> None:
+        """"""
 
 class _Motor(Protocol):
-    """
-    TODO:
-    """
+    FORMAT_RAW: Final[int] = 0
+    FORMAT_PCT: Final[int] = 1
+    FORMAT_SI: Final[int] = 2
+
+    BUSY_MODE: Final[int] = 0
+    BUSY_MOTOR: Final[int] = 1
+
+    STOP_FLOAT: Final[int] = 0
+    STOP_BRAKE: Final[int] = 1
+    STOP_HOLD: Final[int] = 2
+
+    EVENT_COMPLETED: Final[int] = 0
+    EVENT_INTERRUPTED: Final[int] = 1
+
+    PID_SPEED: Final[int] = 0
+    PID_POSITION: Final[int] = 1
+
+    def get(self, format: Optional[int]) -> List[Any]:
+        """"""
+    def mode(self, mode: Iterable[Tuple[int, int]]) -> None:
+        """"""
+    def pwm(self, value: int) -> None:
+        """"""
+    def float(self) -> None:
+        """"""
+    def brake(self) -> None:
+        """"""
+    def hold(self) -> None:
+        """"""
+    def busy(self, type: int = 0) -> bool:
+        """"""
+    @overload
+    def run_at_speed(self, speed: int) -> None:
+        """"""
+    @overload
+    def run_at_speed(
+        self,
+        speed: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+        stall: bool,
+    ) -> None:
+        """"""
+    @overload
+    def run_for_time(self, msec: int) -> None:
+        """"""
+    @overload
+    def run_for_time(
+        self,
+        msec: int,
+        speed: int,
+        max_power: int,
+        stop: int,
+        acceleration: int,
+        deceleration: int,
+        stall: bool,
+    ) -> None:
+        """"""
+    @overload
+    def run_for_degrees(self, degrees: int) -> None:
+        """"""
+    @overload
+    def run_for_degrees(
+        self,
+        degrees: int,
+        speed: int,
+        max_power: int,
+        stop: int,
+        acceleration: int,
+        deceleration: int,
+        stall: bool,
+    ) -> None:
+        """"""
+    @overload
+    def run_to_position(self, position: int) -> None:
+        """"""
+    @overload
+    def run_to_position(
+        self,
+        position: int,
+        speed: int,
+        max_power: int,
+        stop: int,
+        acceleration: int,
+        deceleration: int,
+        stall: bool,
+    ) -> None:
+        """"""
+    def preset(self, position: int) -> None:
+        """"""
+    def callback(self, function: Optional[Callable[[int], None]]) -> None:
+        """"""
+    @overload
+    def pid(self) -> Tuple[int, int, int]:
+        """"""
+    @overload
+    def pid(self, p: int, i: int, d: int) -> None:
+        """"""
+    @overload
+    def default(self) -> Dict[str, Any]:
+        """"""
+    @overload
+    def default(
+        self,
+        speed: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+        stop: int,
+        pid: tuple,
+        stall: bool,
+        callback: Optional[Callable[[int], None]],
+    ) -> None:
+        """"""
+    def pair(self, other_motor: _Motor) -> _MotorPair:
+        """"""
+    def invert(self, *args, **kwargs) -> Any:
+        """"""
 
 class _MotorPair(Protocol):
-    """
-    TODO:
-    """
+    def id(self) -> int:
+        """"""
+    def primary(self) -> _Motor:
+        """"""
+    def secondary(self) -> _Motor:
+        """"""
+    def unpair(self) -> bool:
+        """"""
+    def float(self) -> None:
+        """"""
+    def brake(self) -> None:
+        """"""
+    def hold(self) -> None:
+        """"""
+    def pwm(self, pwm_0: int, pwm_1: int) -> None:
+        """"""
+    @overload
+    def run_at_speed(self, speed_0: int, speed_1: int) -> None:
+        """"""
+    @overload
+    def run_at_speed(
+        self,
+        speed_0: int,
+        speed_1: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+    ) -> None:
+        """"""
+    @overload
+    def run_for_time(self, msec: int) -> None:
+        """"""
+    @overload
+    def run_for_time(
+        self,
+        msec: int,
+        speed_0: int,
+        speed_1: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+        stop: int,
+    ) -> None:
+        """"""
+    @overload
+    def run_for_degrees(self, degrees: int) -> None:
+        """"""
+    @overload
+    def run_for_degrees(
+        self,
+        degrees: int,
+        speed_0: int,
+        speed_1: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+        stop: int,
+    ) -> None:
+        """"""
+    @overload
+    def run_to_position(self, position_0: int, position_1: int) -> None:
+        """"""
+    @overload
+    def run_to_position(
+        self,
+        position_0: int,
+        position_1: int,
+        speed: int,
+        max_power: int,
+        acceleration: int,
+        deceleration: int,
+        stop: int,
+    ) -> None:
+        """"""
+    def preset(self, position_0: int, position_1: int) -> None:
+        """"""
+    def callback(self, function: Optional[Callable[[int], None]]) -> None:
+        """"""
+    def pid(self, p: int, i: int, d: int) -> None:
+        """"""
+    def default(self, *args, **kwargs) -> Any:
+        """"""
 
 class _Pin(Protocol):
     def direction(self, direction: Optional[int]) -> int:

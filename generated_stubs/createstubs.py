@@ -211,14 +211,14 @@ class Stubber:
         if obj_name == "hub":
             import hub
             items.append(("_Button", "", "<class 'type'>", hub.button.center))
-            # TODO: Device
-            # TODO: Motor
-            # TODO: MotorPair
-            hub.port.A.mode(hub.port.MODE_GPIO) # for getting more atts
+            items.append(("_Device", "", "<class 'type'>", hub.port.A.device))
+            items.append(("_Motor", "", "<class 'type'>", hub.port.A.motor))
+            items.append(("_MotorPair", "", "<class 'type'>", hub.port.A.motor.pair(hub.port.B.motor)))
+            hub.port.E.mode(hub.port.MODE_GPIO) # for getting more atts
             import time
             time.sleep(0.5)
-            items.append(("_Pin", "", "<class 'type'>", hub.port.A.p5))
-            items.append(("_Port", "", "<class 'type'>", hub.port.A))
+            items.append(("_Pin", "", "<class 'type'>", hub.port.E.p5))
+            items.append(("_Port", "", "<class 'type'>", hub.port.E))
             
             items.append(("_battery", "", "<class 'type'>", hub.battery))
             items.append(("_bluetooth", "", "<class 'type'>", hub.bluetooth))

@@ -5,56 +5,44 @@ Module: '_api.motorpair' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class MotorPair():
+class MotorPair:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
-    BRAKE = 'brake' # type: str
-    CM = 'cm' # type: str
-    COAST = 'coast' # type: str
-    DEGREES = 'degrees' # type: str
-    HOLD = 'hold' # type: str
-    IN = 'in' # type: str
-    ROTATIONS = 'rotations' # type: str
-    SECONDS = 'seconds' # type: str
+    BRAKE = "brake"  # type: str
+    CM = "cm"  # type: str
+    COAST = "coast"  # type: str
+    DEGREES = "degrees"  # type: str
+    HOLD = "hold"  # type: str
+    IN = "in"  # type: str
+    ROTATIONS = "rotations"  # type: str
+    SECONDS = "seconds"  # type: str
     def get_default_speed(self, *args, **kwargs) -> Any:
         """"""
-
     def move(self, *args, **kwargs) -> Any:
         """"""
-
     def move_tank(self, *args, **kwargs) -> Any:
         """"""
-
     def set_default_speed(self, *args, **kwargs) -> Any:
         """"""
-
     def set_motor_rotation(self, *args, **kwargs) -> Any:
         """"""
-
     def set_stop_action(self, *args, **kwargs) -> Any:
         """"""
-
     def start(self, *args, **kwargs) -> Any:
         """"""
-
     def start_at_power(self, *args, **kwargs) -> Any:
         """"""
-
     def start_tank(self, *args, **kwargs) -> Any:
         """"""
-
     def start_tank_at_power(self, *args, **kwargs) -> Any:
         """"""
-
     def stop(self, *args, **kwargs) -> Any:
         """"""
-
     def was_interrupted(self, *args, **kwargs) -> Any:
         """"""
 
-PORTS = {} # type: dict
+PORTS = {}  # type: dict
+
 def clamp_power(*args, **kwargs) -> Any:
     """"""
 
@@ -67,7 +55,7 @@ def clamp_steering(*args, **kwargs) -> Any:
 def from_steering(*args, **kwargs) -> Any:
     """"""
 
-system : Any ## <class 'System'> = <System object at 20028790>
+system: Any  ## <class 'System'> = <System object at 20028790>
+
 def wait_for_async(*args, **kwargs) -> Any:
     """"""
-

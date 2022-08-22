@@ -5,14 +5,10 @@ Module: '_api.statuslight' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class StatusLight():
+class StatusLight:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
     def off(self, *args, **kwargs) -> Any:
         """"""
-
     def on(self, *args, **kwargs) -> Any:
         """"""
-

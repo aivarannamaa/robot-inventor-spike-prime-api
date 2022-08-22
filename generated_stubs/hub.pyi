@@ -279,6 +279,181 @@ class _Button():
         """"""
 
 
+class _Device():
+    def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    FORMAT_PCT = 1 # type: int
+    FORMAT_RAW = 0 # type: int
+    FORMAT_SI = 2 # type: int
+    @classmethod
+    def get(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def mode(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pwm(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def write_direct(cls, *args, **kwargs) -> Any:
+        """"""
+
+
+class _Motor():
+    def __init__(self, *argv, **kwargs) -> None:
+        """"""
+
+    BUSY_MODE = 0 # type: int
+    BUSY_MOTOR = 1 # type: int
+    EVENT_COMPLETED = 0 # type: int
+    EVENT_INTERRUPTED = 1 # type: int
+    FORMAT_PCT = 1 # type: int
+    FORMAT_RAW = 0 # type: int
+    FORMAT_SI = 2 # type: int
+    PID_POSITION = 1 # type: int
+    PID_SPEED = 0 # type: int
+    STOP_BRAKE = 1 # type: int
+    STOP_FLOAT = 0 # type: int
+    STOP_HOLD = 2 # type: int
+    @classmethod
+    def brake(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def busy(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def default(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def float(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def get(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def hold(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def invert(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def mode(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pair(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pid(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def preset(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pwm(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_at_speed(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_for_degrees(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_for_time(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_to_position(cls, *args, **kwargs) -> Any:
+        """"""
+
+
+class _MotorPair():
+    @classmethod
+    def brake(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def callback(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def default(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def float(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def hold(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def id(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pid(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def preset(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def primary(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def pwm(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_at_speed(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_for_degrees(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_for_time(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def run_to_position(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def secondary(cls, *args, **kwargs) -> Any:
+        """"""
+
+    @classmethod
+    def unpair(cls, *args, **kwargs) -> Any:
+        """"""
+
+
 class _Pin():
     def __init__(self, *argv, **kwargs) -> None:
         """"""
@@ -310,8 +485,8 @@ class _Port():
         """"""
 
     motor : Any ## <class 'NoneType'> = None
-    p5 : Any ## <class 'Port'> = Port(A)
-    p6 : Any ## <class 'Port'> = Port(A)
+    p5 : Any ## <class 'Port'> = Port(E)
+    p6 : Any ## <class 'Port'> = Port(E)
     @classmethod
     def pwm(cls, *args, **kwargs) -> Any:
         """"""

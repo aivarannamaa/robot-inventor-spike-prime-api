@@ -22,4 +22,3 @@ def less_than_or_equal_to(*args, **kwargs) -> Any:
 
 def not_equal_to(*args, **kwargs) -> Any:
     """"""
-

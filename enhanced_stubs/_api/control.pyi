@@ -5,14 +5,11 @@ Module: '_api.control' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class Timer():
+class Timer:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
     def now(self, *args, **kwargs) -> Any:
         """"""
-
     def reset(self, *args, **kwargs) -> Any:
         """"""
 
@@ -33,4 +30,3 @@ def wait_for_seconds(*args, **kwargs) -> Any:
 
 def wait_until(*args, **kwargs) -> Any:
     """"""
-

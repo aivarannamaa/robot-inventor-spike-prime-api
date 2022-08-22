@@ -5,44 +5,33 @@ Module: '_api.speaker' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class Speaker():
+class Speaker:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
     def beep(self, *args, **kwargs) -> Any:
         """"""
-
     def get_volume(self, *args, **kwargs) -> Any:
         """"""
-
     def play_sound(self, *args, **kwargs) -> Any:
         """"""
-
     def set_volume(self, *args, **kwargs) -> Any:
         """"""
-
     def start_beep(self, *args, **kwargs) -> Any:
         """"""
-
     def start_sound(self, *args, **kwargs) -> Any:
         """"""
-
     def stop(self, *args, **kwargs) -> Any:
         """"""
 
-
-class SpeakerSoundProvider():
+class SpeakerSoundProvider:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
     def get_canonical_name(self, *args, **kwargs) -> Any:
         """"""
-
     def get_sound_files(self, *args, **kwargs) -> Any:
         """"""
 
-system : Any ## <class 'System'> = <System object at 20028790>
+system: Any  ## <class 'System'> = <System object at 20028790>
+
 def wait_for_async(*args, **kwargs) -> Any:
     """"""
-

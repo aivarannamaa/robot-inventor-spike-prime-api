@@ -5,51 +5,39 @@ Module: '_api.motionsensor' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
-class MotionSensor():
+class MotionSensor:
     def __init__(self, *argv, **kwargs) -> None:
         """"""
-
-    BACK = 'back' # type: str
-    DOUBLE_TAPPED = 'doubletapped' # type: str
-    DOWN = 'down' # type: str
-    FALLING = 'falling' # type: str
-    FRONT = 'front' # type: str
-    LEFT_SIDE = 'leftside' # type: str
-    RIGHT_SIDE = 'rightside' # type: str
-    SHAKEN = 'shaken' # type: str
-    TAPPED = 'tapped' # type: str
-    UP = 'up' # type: str
+    BACK = "back"  # type: str
+    DOUBLE_TAPPED = "doubletapped"  # type: str
+    DOWN = "down"  # type: str
+    FALLING = "falling"  # type: str
+    FRONT = "front"  # type: str
+    LEFT_SIDE = "leftside"  # type: str
+    RIGHT_SIDE = "rightside"  # type: str
+    SHAKEN = "shaken"  # type: str
+    TAPPED = "tapped"  # type: str
+    UP = "up"  # type: str
     def align_to_model(self, *args, **kwargs) -> Any:
         """"""
-
     def get_gesture(self, *args, **kwargs) -> Any:
         """"""
-
     def get_orientation(self, *args, **kwargs) -> Any:
         """"""
-
     def get_pitch_angle(self, *args, **kwargs) -> Any:
         """"""
-
     def get_roll_angle(self, *args, **kwargs) -> Any:
         """"""
-
     def get_yaw_angle(self, *args, **kwargs) -> Any:
         """"""
-
     def reset_yaw_angle(self, *args, **kwargs) -> Any:
         """"""
-
     def wait_for_new_gesture(self, *args, **kwargs) -> Any:
         """"""
-
     def wait_for_new_orientation(self, *args, **kwargs) -> Any:
         """"""
-
     def was_gesture(self, *args, **kwargs) -> Any:
         """"""
 
 def sleep_ms(*args, **kwargs) -> Any:
     """"""
-
