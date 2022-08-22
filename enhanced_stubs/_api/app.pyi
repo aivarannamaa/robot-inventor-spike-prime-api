@@ -6,25 +6,20 @@ Module: '_api.app' on micropython-v1.14-893-lego learning system hub
 from typing import Any
 
 
-class App():
+class App:
+    """
+    Instance of this class can be used for communicating with the official Mindstorms / Spike desktop app.
+    Relevant only when the connection to the hub is made via the App.
+    """
     def __init__(self) -> None:
         """"""
 
-    def play_sound(self, *args, **kwargs) -> Any:
+    def play_sound(self, name:str, volume:int=100) -> None:
         """"""
 
-    def start_sound(self, *args, **kwargs) -> Any:
+    def start_sound(self, name:str, volume:int=100) -> None:
         """"""
 
-    def stop_sound(self, *args, **kwargs) -> Any:
+    def stop_sound(self, *args, **kwargs) -> Any: # TODO:
         """"""
-
-BT_VCP : Any ## <class 'BT_VCP'> = BT_VCP(0)
-USB_VCP : Any ## <class 'USB_VCP'> = USB_VCP(0)
-json_rpc : Any ## <class 'JSONRPC'> = <JSONRPC object at 2001cff0>
-def ticks_diff(*args, **kwargs) -> Any:
-    """"""
-
-def ticks_ms(*args, **kwargs) -> Any:
-    """"""
 
