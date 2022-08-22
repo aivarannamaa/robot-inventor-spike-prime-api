@@ -5,21 +5,17 @@ Module: '_api.app' on micropython-v1.14-893-lego learning system hub
 # Stubber: 1.7.2
 from typing import Any
 
-
 class App:
     """
     Instance of this class can be used for communicating with the official Mindstorms / Spike desktop app.
     Relevant only when the connection to the hub is made via the App.
     """
+
     def __init__(self) -> None:
         """"""
-
-    def play_sound(self, name:str, volume:int=100) -> None:
+    def play_sound(self, name: str, volume: int = 100) -> None:
         """"""
-
-    def start_sound(self, name:str, volume:int=100) -> None:
+    def start_sound(self, name: str, volume: int = 100) -> None:
         """"""
-
-    def stop_sound(self, *args, **kwargs) -> Any: # TODO:
+    def stop_sound(self, *args, **kwargs) -> Any:  # TODO:
         """"""
-
