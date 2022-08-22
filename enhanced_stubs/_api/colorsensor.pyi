@@ -59,27 +59,13 @@ class ColorSensor:
 
         Accepted values: "black","violet","blue","cyan","green","yellow","red","white",None
         """
-    def light_up(self, *args, **kwargs) -> Any:
-        """"""
-    def light_up_all(self, *args, **kwargs) -> Any:
-        """"""
-    def wait_for_new_color(self, *args, **kwargs) -> Any:
+    def wait_for_new_color(self) -> str:
         """"""
 
-LPF2_FLIPPER_COLOR = 61  # type: int
-PORTS = {}  # type: dict
+    def light_up_all(self, brightness:int=100) -> None:
+        """
+        brightness 0..100
+        """
 
-def clamp(*args, **kwargs) -> Any:
-    """"""
-
-def get_sensor_value(*args, **kwargs) -> Any:
-    """"""
-
-def is_type(*args, **kwargs) -> Any:
-    """"""
-
-def newSensorDisconnectedError(*args, **kwargs) -> Any:
-    """"""
-
-def sleep_ms(*args, **kwargs) -> Any:
-    """"""
+    def light_up(self, light_1:int=100, light_2:int=100, light_3:int=100) -> None:
+        """"""

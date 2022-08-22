@@ -1,37 +1,40 @@
-"""
-Module: '_api.speaker' on micropython-v1.14-893-lego learning system hub
-"""
-# MCU: {'machine': 'LEGO Technic Large Hub with STM32F413xx', 'sysname': 'LEGO Technic Large Hub', 'platform': 'LEGO Learning System Hub', 'nodename': 'LEGO Learning System Hub', 'ver': 'v1.14-893', 'release': '1.14.0', 'name': 'micropython', 'family': 'micropython', 'port': 'LEGO Learning System Hub', 'version': '1.14.0', 'mpy': 517, 'build': '893'}
-# Stubber: 1.7.2
-from typing import Any
+from typing import Any, Optional, List
+
 
 class Speaker:
-    def __init__(self, *argv, **kwargs) -> None:
+    def beep(self, note: int=60, seconds: float=0.2, volume:Optional[int]=None) -> None:
+        """
+        note: the MIDI note number (44-123)
+        volume: 1-100. None means use current volume
+        """
+
+    def start_beep(self, note: int=60, volume:Optional[int]=None) -> None:
+        """
+        Plays until stop or another beep.
+        """
+    def stop(self) -> None:
         """"""
-    def beep(self, *args, **kwargs) -> Any:
+    def play_sound(self, name: str, volume:Optional[int]=None) -> None:
+        """
+        name: one of '1234', 'Activate', 'Affirmative', 'Bowling', 'Brick Eating', 'Celebrate', 'Chuckle', 'Countdown', 'Countdown Tick', 'Damage', 'Deactivate', 'Delivery', 'Dizzy', 'Error', 'Explosion', 'Exterminate', 'Fire', 'Goal', 'Goodbye', 'Grab', 'Hammer', 'Hello', 'Hi', 'Hi 5', 'Hit', 'Horn', 'Humming', 'Hydraulics Down', 'Hydraulics Up', 'Initialize', 'Kick', 'Laser', 'Laugh', 'Like', 'Mission Accomplished', 'No', 'Ouch', 'Ping', 'Play', 'Punch', 'Reverse', 'Revving', 'Sad', 'Scanning', 'Scared', 'Seek and Destroy', 'Shake', 'Shooting', 'Shut Down', 'Slam Dunk', 'Strike', 'Success Chime', 'Tadaa', 'Target Acquired', 'Target Destroyed', 'Whirl', 'Wow', 'Yes', 'Yipee', 'Yuck'
+
+        See ``os.listdir("/extra_files") for all sounds``
+        """
+    def start_sound(self, name: str, volume:Optional[int]=None) -> None:
         """"""
-    def get_volume(self, *args, **kwargs) -> Any:
+    def get_volume(self) -> int:
         """"""
-    def play_sound(self, *args, **kwargs) -> Any:
-        """"""
-    def set_volume(self, *args, **kwargs) -> Any:
-        """"""
-    def start_beep(self, *args, **kwargs) -> Any:
-        """"""
-    def start_sound(self, *args, **kwargs) -> Any:
-        """"""
-    def stop(self, *args, **kwargs) -> Any:
+    def set_volume(self, volume:int=100) -> None:
         """"""
 
 class SpeakerSoundProvider:
-    def __init__(self, *argv, **kwargs) -> None:
+    def __init__(self) -> None:
         """"""
-    def get_canonical_name(self, *args, **kwargs) -> Any:
-        """"""
-    def get_sound_files(self, *args, **kwargs) -> Any:
-        """"""
-
-system: Any  ## <class 'System'> = <System object at 20028790>
-
-def wait_for_async(*args, **kwargs) -> Any:
-    """"""
+    def get_canonical_name(self, name:str) -> str:
+        """
+        Returns path of the corresponding sound file
+        """
+    def get_sound_files(self) -> List[str]:
+        """
+        Returns sequence of sound names.
+        """

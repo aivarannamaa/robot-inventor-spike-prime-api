@@ -30,5 +30,5 @@ from _api.speaker import Speaker
 from _api.statuslight import StatusLight
 
 class PrimeHub(large_technic_hub.LargeTechnicHub):
-    def __init__(self, *argv, **kwargs) -> None:
+    def __init__(self) -> None:
         """"""

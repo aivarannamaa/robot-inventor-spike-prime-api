@@ -1,73 +1,75 @@
-"""
-Module: '_api.motor' on micropython-v1.14-893-lego learning system hub
-"""
-# MCU: {'machine': 'LEGO Technic Large Hub with STM32F413xx', 'sysname': 'LEGO Technic Large Hub', 'platform': 'LEGO Learning System Hub', 'nodename': 'LEGO Learning System Hub', 'ver': 'v1.14-893', 'release': '1.14.0', 'name': 'micropython', 'family': 'micropython', 'port': 'LEGO Learning System Hub', 'version': '1.14.0', 'mpy': 517, 'build': '893'}
-# Stubber: 1.7.2
-from typing import Any
+from typing import Any, Tuple, Dict, Optional
 
-MOTOR_TYPES = ()  # type: tuple
+from hub import _Port
+
+MOTOR_TYPES:Tuple
+PORTS:Dict[str, _Port]
+
 
 class Motor:
-    def __init__(self, *argv, **kwargs) -> None:
+    BRAKE:str = "brake"
+    COAST:str = "coast"
+    HOLD:str = "hold"
+
+    def __init__(self, port:str) -> None:
         """"""
-    BRAKE = "brake"  # type: str
-    COAST = "coast"  # type: str
-    HOLD = "hold"  # type: str
-    def get_default_speed(self, *args, **kwargs) -> Any:
+    def run_to_position(self, degrees:int, direction:str="shortest_path", speed:Optional[int]=None) -> None:
+        """
+        direction: one of "shortest path", "clockwise", "counterclockwise"
+        degrees: 0-359
+        speed: 1-100 (None means default speed)
+        """
+    def run_to_degrees_counted(self, degrees:int, speed:Optional[int]=None) -> None:
         """"""
-    def get_degrees_counted(self, *args, **kwargs) -> Any:
+    def run_for_degrees(self, degrees:int, speed:Optional[int]=None) -> None:
+        """
+        speed: -100..100
+        """
+    def run_for_rotations(self, rotations:float, speed:Optional[int]=None) -> None:
+        """
+        speed: -100..100
+        """
+    def run_for_seconds(self, seconds:float, speed:Optional[int]=None) -> None:
         """"""
-    def get_position(self, *args, **kwargs) -> Any:
+    def start(self, speed:Optional[int]=None) -> None:
         """"""
-    def get_speed(self, *args, **kwargs) -> Any:
-        """"""
-    def run_for_degrees(self, *args, **kwargs) -> Any:
-        """"""
-    def run_for_rotations(self, *args, **kwargs) -> Any:
-        """"""
-    def run_for_seconds(self, *args, **kwargs) -> Any:
-        """"""
-    def run_to_degrees_counted(self, *args, **kwargs) -> Any:
-        """"""
-    def run_to_position(self, *args, **kwargs) -> Any:
-        """"""
-    def set_default_speed(self, *args, **kwargs) -> Any:
-        """"""
-    def set_degrees_counted(self, *args, **kwargs) -> Any:
-        """"""
-    def set_stall_detection(self, *args, **kwargs) -> Any:
-        """"""
-    def set_stop_action(self, *args, **kwargs) -> Any:
-        """"""
-    def start(self, *args, **kwargs) -> Any:
-        """"""
-    def start_at_power(self, *args, **kwargs) -> Any:
-        """"""
-    def stop(self, *args, **kwargs) -> Any:
-        """"""
-    def was_interrupted(self, *args, **kwargs) -> Any:
-        """"""
-    def was_stalled(self, *args, **kwargs) -> Any:
+    def start_at_power(self, power:int) -> None:
+        """
+        power: -100..100
+        """
+    def stop(self) -> None:
         """"""
 
-PORTS = {}  # type: dict
+    def get_speed(self) -> int:
+        """"""
+    def get_position(self) -> int:
+        """"""
+    def get_degrees_counted(self) -> int:
+        """"""
+    def get_default_speed(self) -> int:
+        """"""
+
+    def was_interrupted(self) -> bool:
+        """"""
+    def was_stalled(self) -> bool:
+        """"""
+
+    def set_degrees_counted(self, degrees_counted:int) -> None:
+        """"""
+    def set_default_speed(self, default_speed:int) -> None:
+        """
+        default_speed: -100..100
+        """
+    def set_stop_action(self, action:str) -> None:
+        """
+        action: one of "coast", "brake", "hold" (can be specified as string literals or via constants
+        in this class)
+        """
+    def set_stall_detection(self, stop_when_stalled:bool=True) -> None:
+        """"""
 
 def clamp_power(*args, **kwargs) -> Any:
     """"""
 
 def clamp_speed(*args, **kwargs) -> Any:
-    """"""
-
-def is_type(*args, **kwargs) -> Any:
-    """"""
-
-def newSensorDisconnectedError(*args, **kwargs) -> Any:
-    """"""
-
-def sleep_ms(*args, **kwargs) -> Any:
-    """"""
-
-system: Any  ## <class 'System'> = <System object at 20028790>
-
-def wait_for_async(*args, **kwargs) -> Any:
     """"""

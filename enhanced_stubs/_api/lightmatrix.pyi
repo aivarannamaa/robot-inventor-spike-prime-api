@@ -1,43 +1,56 @@
-"""
-Module: '_api.lightmatrix' on micropython-v1.14-893-lego learning system hub
-"""
-# MCU: {'machine': 'LEGO Technic Large Hub with STM32F413xx', 'sysname': 'LEGO Technic Large Hub', 'platform': 'LEGO Learning System Hub', 'nodename': 'LEGO Learning System Hub', 'ver': 'v1.14-893', 'release': '1.14.0', 'name': 'micropython', 'family': 'micropython', 'port': 'LEGO Learning System Hub', 'version': '1.14.0', 'mpy': 517, 'build': '893'}
-# Stubber: 1.7.2
-from typing import Any
+from typing import List, Sequence
 
-FACES = []  # type: list
+FACES:List[int]
+ORIENTATIONS:List[str]
 
 class LightMatrix:
-    def __init__(self, *argv, **kwargs) -> None:
+    def set_pixel(self, x:int, y:int, brightness:int=100) -> None:
+        """
+        x, y : 0-4
+        brightness: 0-100
+        """
+    def show_image(self, image:str, brightness:int=100) -> None:
+        """
+        image: one of 'ANGRY', 'ARROW_E', 'ARROW_N', 'ARROW_NE', 'ARROW_NW', 'ARROW_S', 'ARROW_SE', 'ARROW_SW', 'ARROW_W', 'ASLEEP', 'BUTTERFLY', 'CHESSBOARD', 'CLOCK1', 'CLOCK10', 'CLOCK11', 'CLOCK12', 'CLOCK2', 'CLOCK3', 'CLOCK4', 'CLOCK5', 'CLOCK6', 'CLOCK7', 'CLOCK8', 'CLOCK9', 'CONFUSED', 'COW', 'DIAMOND', 'DIAMOND_SMALL', 'DUCK', 'FABULOUS', 'GHOST', 'GIRAFFE', 'GO_DOWN', 'GO_LEFT', 'GO_RIGHT', 'GO_UP', 'HAPPY', 'HEART', 'HEART_SMALL', 'HOUSE', 'MEH', 'MUSIC_CROTCHET', 'MUSIC_QUAVER', 'MUSIC_QUAVERS', 'NO', 'PACMAN', 'PITCHFORK', 'RABBIT', 'ROLLERSKATE', 'SAD', 'SILLY', 'SKULL', 'SMILE', 'SNAKE', 'SQUARE', 'SQUARE_SMALL', 'STICKFIGURE', 'SURPRISED', 'SWORD', 'TARGET', 'TORTOISE', 'TRIANGLE', 'TRIANGLE_LEFT', 'TSHIRT', 'UMBRELLA', 'XMAS', 'YES'
+        """
+    def write(self, text: str) -> None:
         """"""
-    def get_orientation(self, *args, **kwargs) -> Any:
-        """"""
-    def off(self, *args, **kwargs) -> Any:
-        """"""
-    def play_animation(self, *args, **kwargs) -> Any:
-        """"""
-    def rotate(self, *args, **kwargs) -> Any:
-        """"""
-    def set_orientation(self, *args, **kwargs) -> Any:
-        """"""
-    def set_pixel(self, *args, **kwargs) -> Any:
-        """"""
-    def show(self, *args, **kwargs) -> Any:
-        """"""
-    def show_image(self, *args, **kwargs) -> Any:
-        """"""
-    def start_animation(self, *args, **kwargs) -> Any:
-        """"""
-    def write(self, *args, **kwargs) -> Any:
+    def off(self) -> None:
         """"""
 
-ORIENTATIONS = []  # type: list
+    def show(self, pixels:str) -> None:
+        """
+        Example: ``hub.light_matrix.show('99999:77777:55555:33333:11111')``
+        """
+    def play_animation(self, animation:Sequence[str], fps: float=2.5, effect:str="direct",
+                       clear:bool=False) -> None:
+        """
+        fps: 1-20
+        effect: one of "direct", "overlay", "slide right", "slide left", "fade in", "fade out"
+        """
 
-def get_current_orientation(*args, **kwargs) -> Any:
+    def start_animation(self, animation:Sequence[str], fps: float=2.5, loop:bool=False, effect:str="direct",
+                       clear:bool=False) -> None:
+        """"""
+
+    def set_orientation(self, orientation:str="upright") -> None:
+        """
+        orientation: one of "upright", "left", "upside down", "right"
+        """
+    def get_orientation(self) -> str:
+        """"""
+
+    def rotate(self, direction: str="clockwise") -> None:
+        """
+        direction: one of "clockwise", "counterclockwise"
+        """
+
+
+def get_current_orientation() -> str:
     """"""
 
-def rotate_orientation(*args, **kwargs) -> Any:
+def rotate_orientation(arg:str) -> None:
     """"""
 
-def set_current_orientation(*args, **kwargs) -> Any:
+def set_current_orientation(orientation:str) -> None:
     """"""
